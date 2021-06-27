@@ -1,0 +1,21 @@
+nav {
+	background: rgb(9, 71, 100);
+	color: white;
+}
+
+ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	display: block;
+	padding: 20px;
+	color: white;
+}

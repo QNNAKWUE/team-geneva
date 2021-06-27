@@ -1,0 +1,15 @@
+/*
+    This stylesheet was created for the index.jsx located inside of the /pages/home
+    This is a scoped stylesheet and should only be imported within the index.jsx located in /pages/home
+*/
+
+/* Change any style here to match your design for your home page*/
+.example-page {
+	background: #aaa;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 48px;
+}
