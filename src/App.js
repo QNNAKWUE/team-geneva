@@ -18,11 +18,7 @@ function App() {
       setLoading(false);
     }
   }
-  const override = `
-  display: block;
-  margin: 0 auto;
-  border-color: red;
-  `;
+
   useEffect(() => {
     getData();
   }, []);
@@ -31,15 +27,21 @@ function App() {
       <div>
         <h2><i className="fa fa-cloud"></i>Weather App</h2>
         <div>
-          <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Enter your location"/>
-          <button type="button" onClick={() => getData()}>Search</button>
+          <input 
+          type="text" 
+          value={city} 
+          onChange={(e) => setCity(e.target.value)} 
+          placeholder="Enter your location"/>
+
+          <button 
+          type="button" 
+          onClick={() => getData()}>Search
+          </button>
+
         </div>
         {loading ? (
           <div>
             <ScaleLoader
-              css={override}
-              size={200}
-              color= {"#fff"}
               loading= {loading}
               />
           </div>
