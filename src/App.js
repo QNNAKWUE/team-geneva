@@ -22,13 +22,16 @@ function App() {
 
   useEffect(() => {
     getData();
-  }, []);
+  },[]);
+
+  // let date=new Date();
   return (
-    <div>
+    <section>
       <div>
-        <h2><i className="fa fa-cloud"></i>Weather App</h2>
-        <div>
+        <h1 className='weather'>Weather App</h1>
+        <div className="input-button">
           <input 
+          className="input-field"
           type="text" 
           value={city} 
           onChange={(e) => setCity(e.target.value)} 
@@ -49,29 +52,30 @@ function App() {
         ) : (
           <>
           {weatherdata !== null ? (
-          <div>
-            <h4>Live Weather Condition</h4>
-            <div>
+          <span>
+            {/* <h4>Live Weather Condition</h4> */}
+            <div className="name-date">
+              <h2><i className="fa fa-street-view"></i>{weatherdata.name} | {weatherdata.sys.country}</h2>
+           
+              <h3>{new Date().toString()}</h3>
+            </div>
+            
+
+            <div className="others">
               <img src={`http://openweathermap.org/img/w/${weatherdata.weather[0].icon}.png`} alt="imgicon"/>
-            </div>
-            <h3>{weatherdata.weather[0].main}</h3>
-            <div>
-              <h1>{parseFloat(weatherdata.main.temp - 273.15).toFixed(1)}&deg;C</h1>
-            </div>
-            <div>
-              <h3><i className="fa fa-street-view"></i>{weatherdata.name} | {weatherdata.sys.country}</h3>
-            </div>
-            <div>
-              <h6>Min: {parseFloat(weatherdata.main.temp_min - 273.15).toFixed(1)}&deg;C 
+              {/* <h3>{weatherdata.weather[0].main}</h3> */}
+              <h3>{parseFloat(weatherdata.main.temp - 273.15).toFixed(1)}&deg;C  | {weatherdata.weather[0].main}</h3>
+              <h4>Min: {parseFloat(weatherdata.main.temp_min - 273.15).toFixed(1)}&deg;C 
               || Max: {parseFloat(weatherdata.main.temp_max - 273.15).toFixed(1)}&deg;C 
-              || Humidity: {weatherdata.main.humidity}%</h6>
+              || Humidity: {weatherdata.main.humidity}%</h4>
             </div>
-        </div>
+           
+            </span>
         ) : null}
           </>
         ) }       
       </div>
-    </div>
+    </section>
   );
 }
 
