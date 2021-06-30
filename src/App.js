@@ -48,7 +48,7 @@ function App() {
           <>
           {weatherdata !== null ? (
           <span>
-            {/* <h4>Live Weather Condition</h4> */}
+            {<h4 className='weather1' >Live Weather Condition</h4> }
             <div className="name-date">
               <h2><i className="fa fa-street-view"></i>{weatherdata.name} | {weatherdata.sys.country}</h2>
            
@@ -58,7 +58,7 @@ function App() {
 
             <div className="others">
               <img src={`http://openweathermap.org/img/w/${weatherdata.weather[0].icon}.png`} alt="imgicon"/>
-              {/* <h3>{weatherdata.weather[0].main}</h3> */}
+              
               <h3>{parseFloat(weatherdata.main.temp - 273.15).toFixed(1)}&deg;C  | {weatherdata.weather[0].main}</h3>
               <h4>Min: {parseFloat(weatherdata.main.temp_min - 273.15).toFixed(1)}&deg;C 
               || Max: {parseFloat(weatherdata.main.temp_max - 273.15).toFixed(1)}&deg;C 
