@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {getWeatherData} from './data/weatherapi';
 import {ScaleLoader} from 'react-spinners';
 
@@ -20,11 +20,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    getData();
-  },[]);
-
-  // let date=new Date();
   return (
     <section>
       <div>
